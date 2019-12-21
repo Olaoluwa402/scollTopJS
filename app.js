@@ -2,9 +2,11 @@
 
 const express = require("express");
 const app = express();
+const expressLayouts = require("express-ejs-layouts");
 // const bodyParser = require("body-parser");
 
-
+app.set("layout", "layouts/layout");
+app.use(expressLayouts);
 
 // app sets and use
 // app.use(bodyParser.json({limit: '10mb', extended: true}));
