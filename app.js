@@ -2,17 +2,20 @@
 
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 
 
 
 // app sets and use
-app.use(bodyParser.json({limit: '10mb', extended: true}));
-app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
-app.use(express.static(__dirname + "/public"));
+// app.use(bodyParser.json({limit: '10mb', extended: true}));
+// app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
 
 
+app.get("/", function(req, res){
+  res.render("index");
+});
 
 
 var port = process.env.PORT;
